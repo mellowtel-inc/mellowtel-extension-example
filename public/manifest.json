@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "THE MELLOWTEL EXAMPLE",
+  "version": "1.0",
+  "description": "A minimal browser extension using Mellowtel",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "permissions": [
+    "storage",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "\u003Call_urls\u003E"
+  ]
+}
